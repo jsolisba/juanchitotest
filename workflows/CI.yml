@@ -1,0 +1,27 @@
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      users: actions/checkout@v3
+
+    - name: set up node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+    
+    - name:  Install dependencies
+      run: npm Install
+
+    - name: Linter
+      run: npm run lint
+
+    - name: Formatter
+      run: npm run prettier
+    
+    - name: Test
+      run: CI=true npm run test
+
+    - name: Build project 
+      run: npm run build
