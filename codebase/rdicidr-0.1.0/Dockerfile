@@ -1,7 +1,7 @@
 FROM node:15 as builder
 
 # Establece el directorio de trabajo dentro del contenedor
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Copia el archivo package.json y package-lock.json
 COPY package*.json ./
