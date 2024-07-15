@@ -5,13 +5,13 @@ on:
     branches:
       - main 
   
-  jobs: 
-    build:
-      runs-on: ubuntu-latest
+jobs: 
+  build:
+    runs-on: ubuntu-latest
 
-      steps:
+    steps:
       - name: Checkout code
-        users: actions/checkout@v3
+        uses: actions/checkout@v3
 
       - name: set up node.js
         uses: actions/setup-node@v3
@@ -19,7 +19,7 @@ on:
           node-version: '16'
     
       - name:  Install dependencies
-        run: npm Install
+        run: npm install
 
       - name: Linter
         run: npm run lint
@@ -30,5 +30,5 @@ on:
       - name: Test
         run: CI=true npm run test
  
-      - name: Build project
+      - name: Build project Juan
         run: npm run build
