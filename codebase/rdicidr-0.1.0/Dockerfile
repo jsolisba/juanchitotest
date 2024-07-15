@@ -1,21 +1,19 @@
 FROM node:15 as builder
 
-WORKDIR
+# Establece el directorio de trabajo dentro del contenedor
+WORKDIR /usr/src/app
 
-COPY
+# Copia el archivo package.json y package-lock.json
+COPY package*.json ./
 
-RUN 
+# Instala las dependencias del proyecto
+RUN npm install
 
-COPY
+# Copia el resto del código de la aplicación
+COPY . .
 
-RUN 
+# Exponer el puerto en el que tu aplicación estará corriendo
+EXPOSE 3000
 
-FROM
-
-WORKDIR
-
-COPY
-
-RUN 
-
-ENTRYPOINT 
+# Comando para ejecutar la aplicación
+CMD ["npm", "start"]
