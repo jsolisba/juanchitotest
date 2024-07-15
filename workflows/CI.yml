@@ -29,6 +29,6 @@ on:
     
       - name: Test
         run: CI=true npm run test
-
-      - name: Build project 
+ 
+      - name: Build project juan
         run: npm run build
